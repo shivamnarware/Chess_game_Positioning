@@ -11,9 +11,9 @@ function App() {
 
 
   const [res, setRes] = useState();
-  const [queenarr, setQueenArr] = useState();
+  const [rookarr, setRookArr] = useState();
 
-  const Queen = (res) => {
+  const Rook = (res) => {
     let a = [];
     let x = parseInt(res / 8);
     for (let i = 8 * x; i < 8 * (x + 1); i++) {
@@ -24,7 +24,7 @@ function App() {
       a.push(y)
       y += 8;
     }
-    setQueenArr(a);
+    setRookArr(a);
   }
 
   return (
@@ -45,7 +45,7 @@ function App() {
 
         {
           arr.map((idx) => (
-            <Box key={idx} i={idx} set={setRes} pos={queenarr} queen={Queen} />
+            <Box key={idx} i={idx} set={setRes} pos={rookarr} rook={Rook} />
           ))
         }
 

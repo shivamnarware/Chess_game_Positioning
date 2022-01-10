@@ -1,13 +1,13 @@
 import React from 'react';
-import { useState } from 'react/cjs/react.development';
 
-function Box({ i, set, pos,queen}) {
+
+function Box({ i, set, pos,rook}) {
     
     const clickedHandler = (e) => {
         e.preventDefault();
         const val = e.target.innerHTML;
         set(val);
-        queen(val);
+        rook(val);
     }
  
     let x;
