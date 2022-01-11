@@ -12,6 +12,8 @@ function App() {
 
   const [res, setRes] = useState();
   const [rookarr, setRookArr] = useState();
+  const [bishoparr, setBishopArr] = useState();
+
 
   const Rook = (res) => {
     let a = [];
@@ -25,6 +27,47 @@ function App() {
       y += 8;
     }
     setRookArr(a);
+  }
+
+
+  const Bishop = (res) => {
+    const arr = [];
+    res = parseInt(res);
+    arr.push(res);
+    let x = parseInt(res / 8);
+    let y = parseInt(res % 8);
+
+    while (x > 0 && y > 0) {
+      x--;
+      y--;
+      arr.push(x * 8 + y);
+    }
+    x = parseInt(res / 8);
+    y = parseInt(res % 8);
+
+    while (x < 7 && y < 7) {
+      x++;
+      y++;
+      arr.push(x * 8 + y);
+    }
+
+    x = parseInt(res / 8);
+    y = parseInt(res % 8);
+    while (x > 0 && y < 7) {
+      x--;
+      y++;
+      arr.push(x * 8 + y);
+    }
+    x = parseInt(res / 8);
+    y = parseInt(res % 8);
+
+    while (x < 7 && y > 0) {
+      x++;
+      y--;
+      arr.push(x * 8 + y);
+    }
+    console.log(arr);
+    setBishopArr(arr);
   }
 
   return (
@@ -45,7 +88,7 @@ function App() {
 
         {
           arr.map((idx) => (
-            <Box key={idx} i={idx} set={setRes} pos={rookarr} rook={Rook} />
+            <Box key={idx} i={idx} set={setRes} pos={bishoparr} rook={Rook} bishop={Bishop} />
           ))
         }
 

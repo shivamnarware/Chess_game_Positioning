@@ -1,13 +1,14 @@
 import React from 'react';
 
 
-function Box({ i, set, pos,rook}) {
+function Box({ i, set, pos,rook,bishop}) {
     
     const clickedHandler = (e) => {
         e.preventDefault();
         const val = e.target.innerHTML;
         set(val);
-        rook(val);
+        // rook(val);
+        bishop(val);
     }
  
     let x;
