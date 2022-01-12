@@ -10,5 +10,5 @@
 ## ▶️ Bishop Positions
 ![Bishop Position](https://github.com/shivamnarware/Chess_game_Positioning/blob/main/Bishop_Position.PNG)
 
-## ▶️ Bishop Positions
+## ▶️ Queen Positions
 ![Queen Position](https://github.com/shivamnarware/Chess_game_Positioning/blob/main/Queen_Position.PNG)
