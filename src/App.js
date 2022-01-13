@@ -1,7 +1,7 @@
 import { useState } from "react";
 import './App.css'
 import Box from "./Box";
-
+import { QueenArray } from "./Queen";
 
 function App() {
   const arr = [];
@@ -13,7 +13,7 @@ function App() {
   const [res, setRes] = useState();
   const [rookarr, setRookArr] = useState();
   const [bishoparr, setBishopArr] = useState();
-  const [queenarr,setQueenArr]=useState();
+  const [queenarr, setQueenArr] = useState();
 
   const Rook = (res) => {
     let a = [];
@@ -70,52 +70,10 @@ function App() {
   }
 
   const Queen = (res) => {
-    let a = [];
-    let x = parseInt(res / 8);
-    for (let i = 8 * x; i < 8 * (x + 1); i++) {
-      a.push(i);
-    }
-    let y = res % 8;
-    for (let j = 1; j <= 8; j++) {
-      a.push(y)
-      y += 8;
-    }
-    res = parseInt(res);
-    a.push(res);
-    x = parseInt(res / 8);
-    y = parseInt(res % 8);
-
-    while (x > 0 && y > 0) {
-      x--;
-      y--;
-      a.push(x * 8 + y);
-    }
-    x = parseInt(res / 8);
-    y = parseInt(res % 8);
-
-    while (x < 7 && y < 7) {
-      x++;
-      y++;
-      a.push(x * 8 + y);
-    }
-
-    x = parseInt(res / 8);
-    y = parseInt(res % 8);
-    while (x > 0 && y < 7) {
-      x--;
-      y++;
-      a.push(x * 8 + y);
-    }
-    x = parseInt(res / 8);
-    y = parseInt(res % 8);
-
-    while (x < 7 && y > 0) {
-      x++;
-      y--;
-      a.push(x * 8 + y);
-    }
+    const a = QueenArray(res);
     setQueenArr(a);
   }
+
 
   return (
     <>
