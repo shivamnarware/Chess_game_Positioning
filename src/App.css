@@ -70,3 +70,53 @@
     color: #000;
     text-align: center;
   }
+
+  .button_Rook {
+    background-color: #ca6608; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    text-align: center;
+    margin-left: 40%;
+    margin-top: 1%;
+  }
+
+  .button_Bishop {
+    background-color: #ca6608; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 1%;
+  }
+
+  
+  .button_Queen {
+    background-color: #ca6608; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 1%;
+  }
+
+
+

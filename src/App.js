@@ -70,6 +70,9 @@ function App() {
           </div>
         </div>
       </div>
+      <button className="button_Rook">Rook</button>
+      <button className="button_Bishop">Bishop</button>
+      <button className="button_Queen">Queen</button>
     </>
   );
 }
