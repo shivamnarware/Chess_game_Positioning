@@ -7,7 +7,7 @@ import { RookArray } from './Rook'
 
 function App() {
   const arr = [];
-  
+
   for (let i = 0; i < 64; i++) {
     arr.push(i);
   }
@@ -16,6 +16,7 @@ function App() {
   const [rookarr, setRookArr] = useState();
   const [bishoparr, setBishopArr] = useState();
   const [queenarr, setQueenArr] = useState();
+
 
   const Rook = (res) => {
     const arr = RookArray(res);
@@ -29,10 +30,16 @@ function App() {
   }
 
   const Queen = (res) => {
-    const a = QueenArray(res);
-    setQueenArr(a);
+    const arr = QueenArray(res);
+    setQueenArr(arr);
   }
 
+  const [piece, setPiece] = useState("Rook");
+  const clickedHandler = (e) => {
+    e.preventDefault();
+    const value = e.target.innerHTML;
+    setPiece(value);
+  }
 
   return (
     <>
@@ -52,10 +59,12 @@ function App() {
 
         {
           arr.map((idx) => (
-            <Box key={idx} i={idx} set={setRes} pos={queenarr} queen={Queen} rook={Rook} bishop={Bishop} />
-          ))
+            piece === 'Rook' ? (<Box key={idx} i={idx} set={setRes} pos={rookarr} piece={piece} queen={Queen} rook={Rook} bishop={Bishop} />) :
+              (piece === 'Queen' ? (<Box key={idx} i={idx} set={setRes} pos={queenarr} piece={piece} queen={Queen} rook={Rook} bishop={Bishop} />) :
+                (<Box key={idx} i={idx} set={setRes} pos={bishoparr} piece={piece} queen={Queen} rook={Rook} bishop={Bishop} />))
+          )
+          )
         }
-
 
         <div className="bottom">
           <div className="wrapper-inner">
@@ -70,9 +79,9 @@ function App() {
           </div>
         </div>
       </div>
-      <button className="button_Rook">Rook</button>
-      <button className="button_Bishop">Bishop</button>
-      <button className="button_Queen">Queen</button>
+      <button onClick={clickedHandler} className="button_Rook">Rook</button>
+      <button onClick={clickedHandler} className="button_Bishop">Bishop</button>
+      <button onClick={clickedHandler} className="button_Queen">Queen</button>
     </>
   );
 }
