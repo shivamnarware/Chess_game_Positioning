@@ -2,7 +2,6 @@
 * queen 
 * Knight 
 * Rook 
-* Bishop.
 
 ## ▶️ Rook Positions
 ![Rook Position](https://github.com/shivamnarware/Chess_game_Positioning/blob/main/Rooks_Position.PNG)
